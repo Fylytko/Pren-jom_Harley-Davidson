@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harley-Davidson Bratislava Prenájom | 2025 Modely</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        harleyorange: '#ff6600',
+                        harleydark: '#000000',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.harley-davidson.com/content/dam/h-d/images/content-images/short-hero/rent-a-motorcycle-short-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .bike-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 102, 0, 0.3);
+        }
+        
+        .bike-card {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #ff6600;
+        }
+        
+        .btn-primary {
+            background-color: #ff6600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e05a00;
+            transform: translateY(-2px);
+        }
+        
+        .section-divider {
+            border-top: 3px solid #ff6600;
+            width: 100px;
+            margin: 20px auto;
+        }
+        
+        .testimonial-card {
+            border-left: 4px solid #ff6600;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header/Navigation -->
+    <header class="bg-harleydark text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://www.harley-davidson-bratislava.sk/wp-content/uploads/logo-white-1.svg" alt="Harley-Davidson Bratislava Logo" class="h-12">
+                <span class="ml-2 text-xl font-bold hidden md:block">PRENÁJOM</span>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="nav-link text-white hover:text-harleyorange transition">Domov</a></li>
+                    <li><a href="#bikes" class="nav-link text-white hover:text-harleyorange transition">Naše Motorky</a></li>
+                    <li><a href="#pricing" class="nav-link text-white hover:text-harleyorange transition">Cenník</a></li>
+                    <li><a href="#about" class="nav-link text-white hover:text-harleyorange transition">O Nás</a></li>
+                    <li><a href="#contact" class="nav-link text-white hover:text-harleyorange transition">Kontakt</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div class="md:hidden bg-harleydark text-white hidden" id="mobileMenu">
+        <ul class="flex flex-col space-y-4 p-4">
+            <li><a href="#home" class="nav-link text-white hover:text-harleyorange transition">Domov</a></li>
+            <li><a href="#bikes" class="nav-link text-white hover:text-harleyorange transition">Naše Motorky</a></li>
+            <li><a href="#pricing" class="nav-link text-white hover:text-harleyorange transition">Cenník</a></li>
+            <li><a href="#about" class="nav-link text-white hover:text-harleyorange transition">O Nás</a></li>
+            <li><a href="#contact" class="nav-link text-white hover:text-harleyorange transition">Kontakt</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center justify-center text-white">
+        <div class="container mx-auto px-4 text-center hero-text">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">NEZABUDNUTEĽNÝ ZÁŽITOK</h1>
+            <h2 class="text-2xl md:text-4xl font-semibold mb-8">Harley-Davidson 2025 Modely v Bratislave</h2>
+            <div class="section-divider"></div>
+            <p class="text-xl mb-12 max-w-2xl mx-auto">Zažite slobodu otvorenej cesty s našimi prémiovými Harley-Davidson motorkami. Vypožičajte si svoj vysnívaný stroj ešte dnes!</p>
+            <a href="#bikes" class="btn-primary text-white font-bold py-3 px-8 rounded-full inline-block">Pozrieť Motorky</a>
+        </div>
+    </section>
+
+    <!-- Featured Bikes Section -->
+    <section id="bikes" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">NAŠA PONUKA</h2>
+            <div class="section-divider"></div>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Vyberte si z našej ponuky úplne nových Harley-Davidson modelov 2025, ktoré sú starostlivo udržiavané pre vašu jazdu.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Bike 1 -->
+                <div class="bike-card bg-gray-50 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://www.thunderbike.com/wp-content/uploads/2024/02/4k_Display-RoadxStreet-Glide_2024_Michael-Rauscher_Michael-Rauscher_05-1920x2400.jpg" alt="Harley-Davidson Street Glide" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Street Glide® 2025</h3>
+                        <p class="text-gray-600 mb-4">Špičkový bagger s motorom Milwaukee-Eight® 117 a prémiovými touring vlastnosťami.</p>
+                        <ul class="mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Milwaukee-Eight® 117 Engine</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Boom!™ Box GTS Infotainment</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Prémiové touring odpruženie</li>
+                        </ul>
+                        <a href="#contact" class="btn-primary text-white font-bold py-2 px-6 rounded-full inline-block w-full text-center">Rezervovať</a>
+                    </div>
+                </div>
+                
+                <!-- Bike 2 -->
+                <div class="bike-card bg-gray-50 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://www.thunderbike.com/wp-content/uploads/2018/08/2025-road-glide-gallery-slc-2.jpg" alt="Harley-Davidson Road Glide" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Road Glide® 2025</h3>
+                        <p class="text-gray-600 mb-4">Ikona medzi touring motorkami s charakteristickým "shark nose" predkom.</p>
+                        <ul class="mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Milwaukee-Eight® 114 Engine</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Reflex™ Defensive Rider Systems</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Batwing fairing s LED osvetlením</li>
+                        </ul>
+                        <a href="#contact" class="btn-primary text-white font-bold py-2 px-6 rounded-full inline-block w-full text-center">Rezervovať</a>
+                    </div>
+                </div>
+                
+                <!-- Bike 3 -->
+                <div class="bike-card bg-gray-50 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUYnKdJfJ27o8FxxZ1JBHfTH8ZJ8j1sUm3Mg&s" alt="Harley-Davidson Low Rider ST" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Low Rider ST 2025</h3>
+                        <p class="text-gray-600 mb-4">Výkonný model s moderným dizajnom a špičkovými jazdnými vlastnosťami.</p>
+                        <ul class="mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Milwaukee-Eight® 117 Engine</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Športové odpruženie</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Agresívny štýl a výkon</li>
+                        </ul>
+                        <a href="#contact" class="btn-primary text-white font-bold py-2 px-6 rounded-full inline-block w-full text-center">Rezervovať</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">CENNÍK PRENÁJMU</h2>
+            <div class="section-divider"></div>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Flexibilné možnosti prenájmu pre vaše potreby. Všetky ceny zahŕňajú plné poistenie a asistenčnú službu 24/7.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Pricing Option 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="bg-harleydark text-white py-4 text-center">
+                        <h3 class="text-xl font-bold">DENNÝ PRENÁJOM</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold text-harleyorange">199€</span>
+                            <span class="text-gray-600">/ deň</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> 24-hodinový prenájom</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Neobmedzené kilometre</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Plné poistenie</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Prilba a rukavice</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Asistenčná služba 24/7</li>
+                        </ul>
+                        <a href="#contact" class="btn-primary text-white font-bold py-2 px-6 rounded-full inline-block w-full text-center">Rezervovať</a>
+                    </div>
+                </div>
+                
+                <!-- Pricing Option 2 - Weekend -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform scale-105">
+                    <div class="bg-harleyorange text-white py-4 text-center">
+                        <h3 class="text-xl font-bold">VÍKENDOVÝ PRENÁJOM</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold text-harleyorange">499€</span>
+                            <span class="text-gray-600">/ víkend</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Piatok 12:00 - Pondelok 12:00</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Neobmedzené kilometre</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Plné poistenie</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> 2x prémiové prilby</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Párové rukavice</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> GPS navigácia zdarma</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Víkendový roadbook</li>
+                        </ul>
+                        <a href="#contact" class="btn-primary text-white font-bold py-2 px-6 rounded-full inline-block w-full text-center">Rezervovať</a>
+                    </div>
+                </div>
+                
+                <!-- Pricing Option 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="bg-harleydark text-white py-4 text-center">
+                        <h3 class="text-xl font-bold">TÝŽDENNÝ PRENÁJOM</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold text-harleyorange">999€</span>
+                            <span class="text-gray-600">/ týždeň</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> 7-dňový prenájom</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Neobmedzené kilometre</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Plné poistenie</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Prilba a rukavice</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Asistenčná služba 24/7</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> GPS navigácia zdarma</li>
+                        </ul>
+                        <a href="#contact" class="btn-primary text-white font-bold py-2 px-6 rounded-full inline-block w-full text-center">Rezervovať</a>
+                    </div>
+                </div>
+                
+                <!-- Pricing Option 4 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="bg-harleydark text-white py-4 text-center">
+                        <h3 class="text-xl font-bold">MESAČNÝ PRENÁJOM</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold text-harleyorange">3 499€</span>
+                            <span class="text-gray-600">/ mesiac</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> 30-dňový prenájom</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Neobmedzené kilometre</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Plné poistenie</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Prilba a rukavice</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Asistenčná služba 24/7</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> GPS navigácia zdarma</li>
+                            <li class="flex items-center"><i class="fas fa-check text-harleyorange mr-2"></i> Kontrola technického stavu zdarma</li>
+                        </ul>
+                        <a href="#contact" class="btn-primary text-white font-bold py-2 px-6 rounded-full inline-block w-full text-center">Rezervovať</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">PREČO SI VYBRAŤ NÁS</h2>
+            <div class="section-divider"></div>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Nie sme len ďalšia prenajímovňa motocyklov. Tu je to, čo nás odlišuje:</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="text-center p-6">
+                    <div class="bg-harleyorange text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Prémiové Poistenie</h3>
+                    <p class="text-gray-600">Všetky naše prenájmy zahŕňajú komplexné poistenie s minimálnou spoluúčasťou.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="text-center p-6">
+                    <div class="bg-harleyorange text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-broom text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dokonalý Stav</h3>
+                    <p class="text-gray-600">Naše Harley-Davidson modely 2025 sú starostlivo udržiavané a čistené pred každým prenájmom.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="text-center p-6">
+                    <div class="bg-harleyorange text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marked-alt text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Odporúčania Trás</h3>
+                    <p class="text-gray-600">Poskytujeme odporúčania na najkrajšie cesty v okolí Bratislavy a Slovenska.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="text-center p-6">
+                    <div class="bg-harleyorange text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Flexibilné Hodiny</h3>
+                    <p class="text-gray-600">Možnosť vyzdvihnutia skoro ráno alebo neskoro večer pre maximálny čas jazdy.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="text-center p-6">
+                    <div class="bg-harleyorange text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-tie text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Expertný Tím</h3>
+                    <p class="text-gray-600">Náš tím tvoria nadšení jazdci, ktorí vám poskytnú cenné rady a tipy.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="text-center p-6">
+                    <div class="bg-harleyorange text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-motorcycle text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Najnovšie Modely</h3>
+                    <p class="text-gray-600">Ponúkame výhradne najnovšie Harley-Davidson modely 2025 so všetkými najnovšími funkciami.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">RECENZIE ZÁKAZNÍKOV</h2>
+            <div class="section-divider"></div>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Pozrite sa, čo o nás hovoria naši zákazníci.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ján K." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ján K.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Prenájom Street Glide Special bol vrcholom nášho európskeho výletu. Motorka bola v dokonalom stave a personál nám odporučil úžasné trasy slovenskou krajinou. Určite si znova vypožičiam!"</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Zuzana M." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Zuzana M.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Ako prvorazový jazdec na Harley som bola nervózna, ale tím ma úplne uvoľnil. Low Rider ST bol perfektný stroj - výkonný, ale zvládnuteľný. Prilba a rukavice boli vysokej kvality."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Michal T." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michal T.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Týždenný prenájom Road Glide stál za každé euro! Motorka priťahovala pozornosť všade, kam sme prišli. Neobmedzené kilometre nám umožnili preskúmať Slovensko, Rakúsko a Maďarsko bez starostí."</p>
+                </div>
+                
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Elena K." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Elena K.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Perfektný zážitok od začiatku do konca. Rezervácia bola jednoduchá, motorka pripravená včas a vrátenie bez problémov. Určite odporučím túto službu všetkým svojim priateľom."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://mobil.citylife.sk/sites/default/files/miesta/342.jpg" alt="Náš Tím" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">O HARLEY-DAVIDSON BRATISLAVA PRENÁJOM</h2>
+                    <div class="section-divider"></div>
+                    <p class="text-gray-600 mb-4">Sme popredná autorizovaná prenajímovňa Harley-Davidson v Bratislave, Slovensku. Ako nadšení jazdci rozumieme tomu, čo robí skvelý zážitok z prenájmu motorky.</p>
+                    <p class="text-gray-600 mb-4">Našou misiou je poskytnúť jazdcom prístup k najnovším modelom Harley-Davidson pri zachovaní výnimočného zákazníckeho servisu. Či už ste miestny jazdec, ktorý chce vyskúšať nový model, alebo návštevník, ktorý chce objavovať Slovensko na ikonickej americkej motorke, máme pre vás to pravé.</p>
+                    <p class="text-gray-600 mb-6">Všetky naše motorky sú modely 2025, zakúpené priamo od Harley-Davidson a udržiavané podľa najvyšších štandardov certifikovanými technikmi. Sme hrdí na to, že ponúkame čisté, dobre udržiavané motorky, ktoré na ceste perfektne fungujú.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-harleyorange text-white px-4 py-2 rounded-full font-bold">Autorizovaný Predajca</div>
+                        <div class="bg-harleydark text-white px-4 py-2 rounded-full font-bold">Certifikovaní Technici</div>
+                        <div class="bg-harleyorange text-white px-4 py-2 rounded-full font-bold">Podpora 24/7</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">KONTAKTUJTE NÁS</h2>
+            <div class="section-divider"></div>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Ste pripravení si rezervovať svoj Harley-Davidson? Kontaktujte nás ešte dnes.</p>
+            
+            <div class="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
+                <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6">POŠLITE NÁM SPRÁVU</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">Meno a priezvisko</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-harleyorange">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-2">Emailová adresa</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-harleyorange">
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 mb-2">Telefónne číslo</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-harleyorange">
+                        </div>
+                        <div class="mb-4">
+                            <label for="bike" class="block text-gray-700 mb-2">Model</label>
+                            <select id="bike" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-harleyorange">
+                                <option value="">Vyberte motorku</option>
+                                <option value="street-glide">Street Glide® 2025</option>
+                                <option value="road-glide">Road Glide® 2025</option>
+                                <option value="low-rider">Low Rider ST 2025</option>
+                                <option value="not-sure">Neviem - potrebujem poradiť</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="dates" class="block text-gray-700 mb-2">Preferovaný dátum prenájmu</label>
+                            <input type="text" id="dates" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-harleyorange" placeholder="DD/MM/RRRR - DD/MM/RRRR">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 mb-2">Vaša správa</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-harleyorange"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary text-white font-bold py-3 px-8 rounded-full w-full">Odoslať správu</button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+                        <h3 class="text-2xl font-bold mb-6">NAŠA ADRESA</h3>
+                        <div class="flex items-start mb-4">
+                            <i class="fas fa-map-marker-alt text-harleyorange text-xl mr-4 mt-1"></i>
+                            <div>
+                                <p class="font-bold">Harley-Davidson Bratislava Prenájom</p>
+                                <p class="text-gray-600">Rebarborová 8865/1A</p>
+                                <p class="text-gray-600">821 07 Bratislava, Slovensko</p>
+                            </div>
+                        </div>
+                        <div class="h-64 bg-gray-200 rounded-lg overflow-hidden mb-4">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.332778557115!2d17.1071393157259!3d48.16049097922429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8bfa3d1a8a6d%3A0x3f4b3a3b3b3b3b3b!2sBratislava%2C%20Slovakia!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6">KONTAKTNÉ ÚDAJE</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone-alt text-harleyorange text-xl mr-4"></i>
+                                <div>
+                                    <p class="text-gray-600">Telefón</p>
+                                    <p class="font-bold">0905 667 661</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-harleyorange text-xl mr-4"></i>
+                                <div>
+                                    <p class="text-gray-600">Email</p>
+                                    <p class="font-bold">prenajom@hdbratislava.sk</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-harleyorange text-xl mr-4"></i>
+                                <div>
+                                    <p class="text-gray-600">Otváracie hodiny</p>
+                                    <p class="font-bold">Pondelok - Piatok: 9:00 - 18:00</p>
+                                    <p class="font-bold">Sobota: 9:00 - 15:00</p>
+                                    <p class="font-bold">Nedeľa: Zatvorené</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">ČASTO KLADENÉ OTÁZKY</h2>
+            <div class="section-divider"></div>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Máte otázky? Máme odpovede. Tu sú niektoré z najčastejších otázok, ktoré dostávame.</p>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none">
+                        <span class="text-lg font-semibold text-left">Aké sú požiadavky na prenájom Harley-Davidson?</span>
+                        <i class="fas fa-chevron-down text-harleyorange transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">Na prenájom Harley-Davidson motorky od nás musíte:</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-600">
+                            <li>Mať aspoň 25 rokov</li>
+                            <li>Vlastniť platný vodičský prekaz na motorku aspoň 3 roky</li>
+                            <li>Predložiť platný občiansky preukaz alebo pas</li>
+                            <li>Predložiť platnú kreditnú kartu na vaše meno pre zálohu</li>
+                            <li>Podpísať našu zmluvu o prenájme</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none">
+                        <span class="text-lg font-semibold text-left">Čo je zahrnuté v cene prenájmu?</span>
+                        <i class="fas fa-chevron-down text-harleyorange transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">Naše ceny prenájmu zahŕňajú:</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-600">
+                            <li>Neobmedzené kilometre</li>
+                            <li>Kompletné poistenie s rozumnou spoluúčasťou</li>
+                            <li>Asistenčnú službu 24/7</li>
+                            <li>Prilbu a rukavice (voliteľné)</li>
+                            <li>Základné oboznámenie s motorkou</li>
+                            <li>Všetky dane a poplatky</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none">
+                        <span class="text-lg font-semibold text-left">Môžem vziať motorku mimo Slovenska?</span>
+                        <i class="fas fa-chevron-down text-harleyorange transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">Áno! Naše motorky môžete vziať do susedných krajín ako Rakúsko, Maďarsko, Česko a Poľsko. Za cestu do krajín EÚ sa neúčtuje žiadny poplatok. Poskytneme vám všetky potrebné dokumenty vrátane osvedčenia o registrácii vozidla a zelenej karty poistenia.</p>
+                        <p class="text-gray-600 mt-2">Prosím, informujte nás vopred, ak plánujete vziať motorku mimo Slovenska, aby sme mohli pripraviť potrebné dokumenty.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none">
+                        <span class="text-lg font-semibold text-left">Aká je vaša storno politika?</span>
+                        <i class="fas fa-chevron-down text-harleyorange transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">Naša storno politika je nasledovná:</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-600">
+                            <li>Viac ako 14 dní pred prenájmom: Úplný refund</li>
+                            <li>7-14 dní pred prenájmom: 50% refund</li>
+                            <li>Menej ako 7 dní pred prenájmom: Žiadny refund</li>
+                        </ul>
+                        <p class="text-gray-600 mt-2">Odporúčame zakúpiť cestovné poistenie, ktoré pokrýva zrušenie prenájmu, ak máte obavy z možných zmien vašich plánov.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none">
+                        <span class="text-lg font-semibold text-left">Ponúkate jednosmerný prenájom?</span>
+                        <i class="fas fa-chevron-down text-harleyorange transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">V súčasnosti ponúkame len prenájom s povinnosťou vrátiť motorku na našu adresu v Bratislave. To nám umožňuje udržiavať najvyššiu kvalitu služieb a údržby motorky.</p>
+                        <p class="text-gray-600 mt-2">Avšak môžeme vám zabezpečiť službu prepravy motorky za príplatok, ak potrebujete motorku doručiť alebo vyzdvihnúť z iného miesta na Slovensku.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-harleydark text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">PRIPOJTE SA K NAŠEJ KOMUNITE</h2>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto">Prihláste sa na odber nášho newslettera pre exkluzívne ponuky, tipy na jazdu a novinky o Harley-Davidson.</p>
+            <form class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Vaša emailová adresa" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-800">
+                <button type="submit" class="bg-harleyorange hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-r-lg">Prihlásiť sa</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="https://www.harley-davidson-bratislava.sk/wp-content/uploads/logo-white-1.svg" alt="Harley-Davidson Bratislava Logo" class="h-10 mb-4">
+                    <p class="text-gray-400">Autorizovaná prenajímovňa Harley-Davidson v Bratislave, Slovensku. Zažite legendu s nami.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-harleyorange transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-harleyorange transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-harleyorange transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">RÝCHLE ODKAZY</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-harleyorange transition">Domov</a></li>
+                        <li><a href="#bikes" class="text-gray-400 hover:text-harleyorange transition">Naše Motorky</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-harleyorange transition">Cenník</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-harleyorange transition">O Nás</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-harleyorange transition">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">KONTAKTNÉ ÚDAJE</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-harleyorange mt-1 mr-2"></i>
+                            <span>Rebarborová 8865/1A, 821 07 Bratislava, Slovensko</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-harleyorange mr-2"></i>
+                            <span>0905 667 661</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-harleyorange mr-2"></i>
+                            <span>prenajom@hdbratislava.sk</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">OTVÁRACIE HODINY</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex justify-between">
+                            <span>Pondelok - Piatok</span>
+                            <span>9:00 - 18:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sobota</span>
+                            <span>9:00 - 15:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Nedeľa</span>
+                            <span>Zatvoreé</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 Harley-Davidson Bratislava Prenájom. Všetky práva vyhradené. Harley-Davidson a logo Bar & Shield sú ochranné známky H-D U.S.A., LLC.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('button').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Toggle content
+                content.classList.toggle('hidden');
+                
+                // Rotate icon
+                if (content.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
